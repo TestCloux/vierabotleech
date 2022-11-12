@@ -56,7 +56,7 @@ try:
 except:
     SERVER_PORT = 80
 
-Popen(f"gunicorn web.wserver:app --bind overdosedrivetd.herokuapp.com", shell=True)
+Popen(f"gunicorn web.wserver:app --bind https://overdosedrivetd.herokuapp.com", shell=True)
 srun(["qbittorrent-nox", "-d", "--profile=."])
 if not ospath.exists('.netrc'):
     srun(["touch", ".netrc"])
